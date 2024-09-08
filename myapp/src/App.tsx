@@ -1,9 +1,14 @@
 import React from "react";
 
 import "./App.css";
+import Signup from "./components/Signup";
+// import Signup from "./components/Signup";
 
 const App = () => {
-  return <h1 className="text-6xl font-bold text-red-600">Hello world!</h1>;
-};
+  return (
+    <Signup/>
+    
+  )
+}
 
 export default App;
