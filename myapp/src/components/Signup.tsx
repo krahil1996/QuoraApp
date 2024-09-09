@@ -1,4 +1,4 @@
-import welcome from "../assets/background-img.jpeg";
+import welcome from "../assets/back.jpg";
 import google from "../assets/google.png";
 import facebook from "../assets/fb.png";
 import "../App.css";
@@ -98,28 +98,35 @@ const Signup = () => {
           <a className="hover:underline" href="#">
             About
           </a>
+          <span>{"•"}</span>
           <a className="hover:underline" href="#">
             Careers
           </a>
+          <span>{"•"}</span>
           <a className="hover:underline" href="#">
             Privacy
           </a>
+          <span>{"•"}</span>
           <a className="hover:underline" href="#">
             Terms
           </a>
+          <span>{"•"}</span>
           <a className="hover:underline" href="#">
             Contact
           </a>
+          <span>{"•"}</span>
           <a className="hover:underline" href="#">
             Languages
           </a>
+          <span>{"•"}</span>
           <a className="hover:underline" href="#">
             Your Ad Choices
           </a>
+          <span>{"•"}</span>
           <a className="hover:underline" href="#">
             Press
           </a>
-          © Quora, Inc. 2024
+          <span>{"•"}</span> © Quora, Inc. 2024
         </div>
       </div>
     </div>
