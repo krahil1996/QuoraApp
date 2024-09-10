@@ -1,6 +1,7 @@
 import welcome from "../assets/back.jpg";
 import google from "../assets/google.png";
 import facebook from "../assets/fb.png";
+
 import "../App.css";
 
 const Signup = () => {
@@ -14,12 +15,12 @@ const Signup = () => {
         height: "100vh",
       }}
     >
-      <div className="bg-white max-h-3/4 w-cus rounded-ssm px-8 py-6 ">
-        <h1 className="text-red-700 text-6xl font-semibold font-clarendon text-center ">
+      <div className="bg-white min-h-fit w-cus rounded-ssm px-8 py-4 shadow-md shadow-gray-700 ">
+        <h1 className="text-red-700 text-6xl font-clarendon text-center pt-4 ">
           Quora
         </h1>
 
-        <h1 className="text-center font-bold text-gray-600 mt-3">
+        <h1 className="text-center font-bold text-gray-600 mt-3 ">
           A place to share knowledge and better understand the world
         </h1>
         <div className=" flex flex-row wrap mt-10">
@@ -77,8 +78,8 @@ const Signup = () => {
           </div>
         </div>
 
-        <div className="inline-flex items-center justify-center my-4 py-4 borer-y-1 w-full text-center text-cyan-700 text-sm hover:underline cursor-pointer">
-          हिन्‍दी
+        <div className="inline-flex items-center justify-center my-4 py-4 borer-y-1 w-full text-center text-cyan-700 text-sm ">
+          <span className="hover:underline cursor-pointer">हिन्‍दी</span>
           <svg
             width="17"
             height="17"

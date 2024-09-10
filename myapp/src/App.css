@@ -67,26 +67,24 @@
   outline: 0.5px;
 }
 .font-clarendon {
-  font-family: "Clarendon Cn BT", sans-serif;
   font-family: "ClarendonSteDExtBol", sans-serif;
-  font-family: "ClarendonTBol", sans-serif;
   font-family: "ClarendonTBolExp", sans-serif;
-  font-family: "ClarendonTExtBol", sans-serif;
   font-family: "ClarendonTLig", sans-serif;
-  font-family: "ClarendonTMed", sans-serif;
-  font-family: "URWClarendonTExtBol", sans-serif;
   font-family: "URWClarendonTExtBolExtNar", sans-serif;
   font-family: "URWClarendonTExtBolExtWid", sans-serif;
   font-family: "URWClarendonTExtWid", sans-serif;
   font-family: "URWClarendonTLigExtNar", sans-serif;
   font-family: "URWClarendonTMed", sans-serif;
   font-family: "URWClarendonTWid", sans-serif;
-  font-family: "Clarendon Blk BT", sans-serif;
-  font-family: "Clarendon BT", sans-serif;
-  font-family: "Clarendon Lt BT", sans-serif;
-  font-family: "URWClarendonTExtBolWid", sans-serif;
   font-family: "URWClarendonTLig", sans-serif;
-  font-family: "Clarendon-Light", sans-serif;
-  font-family: "Clarendon-Bold", sans-serif;
+  font-family: "URWClarendonTExtBolWid", sans-serif;
+  font-family: "Clarendon Lt BT", sans-serif;
+  font-family: "Clarendon Cn BT", sans-serif;
+  font-family: "Clarendon BT", sans-serif;
+  font-family: "Clarendon Blk BT", sans-serif;
   font-family: "Clarendon-DemiBold", sans-serif;
+  font-family: "URWClarendonTExtBol", sans-serif;
+  font-family: "ClarendonTExtBol", sans-serif;
+  font-family: "ClarendonTBol", sans-serif;
+  font-family: "ClarendonTMed", sans-serif;
 }

@@ -2,13 +2,9 @@ import React from "react";
 
 import "./App.css";
 import Signup from "./components/Signup";
-// import Signup from "./components/Signup";
 
 const App = () => {
-  return (
-    <Signup/>
-    
-  )
-}
+  return <Signup />;
+};
 
 export default App;
