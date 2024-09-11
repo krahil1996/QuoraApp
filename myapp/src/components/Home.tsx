@@ -6,7 +6,22 @@ const Home = () => {
   return (
     <div>
       <header>
-        navbar
+
+        <ul className="list-1">
+          <div className="list">
+          <a href="#" >Logo</a>
+          <a href="#" >Home</a>
+          <a href="#" >Following</a>
+          <a href="#" >Answer</a>
+          <a href="#" >Spaces</a>
+          <a href="#" >Notifications</a>
+          <a href="#" >Search bar</a>
+          <a href="#" >Try Quara+</a>
+          <a href="#" >Profile logo</a>
+          <a href="#" >Web</a>
+          <a href="#" >Add Questions</a>
+          </div>
+        </ul>
       </header>
       <div>
         <div className="container-1">
