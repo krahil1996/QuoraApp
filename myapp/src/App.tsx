@@ -5,7 +5,6 @@ import Signup from "./components/Signup";
 
 const App = () => {
   return <Signup />;
-  <div></div>;
 };
 
 export default App;
