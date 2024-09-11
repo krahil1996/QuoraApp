@@ -1,8 +1,8 @@
 import welcome from "../assets/back.jpg";
 import google from "../assets/google.png";
 import facebook from "../assets/fb.png";
-import SignInWithGoogle from "./SignInWithGoogle";
-import signInWithPopupfb from "./SignInWithFB";
+import Singup from "./SignInWithGoogle";
+// import signInWithPopupfb from "./SignInWithFB";
 import "../App.css";
 
 const Signup = () => {
@@ -39,16 +39,13 @@ const Signup = () => {
             </h1>
             <div className=" flex flex-col gap-2 mt-4">
               <div
-                onClick={SignInWithGoogle}
+                onClick={Singup}
                 className="flex p-1 border border-spacing-1 rounded-ssm items-center cursor-pointer hover:bg-gray-100 ease-in transition-all "
               >
                 <img className="w-6 h-6 m-2 " src={google} />
                 <h1>Continue with Google</h1>
               </div>
-              <div
-                onClick={signInWithPopupfb}
-                className="flex p-1 border border-spacing-1 rounded-ssm items-center cursor-pointer hover:bg-gray-100 ease-in transition-all"
-              >
+              <div className="flex p-1 border border-spacing-1 rounded-ssm items-center cursor-pointer hover:bg-gray-100 ease-in transition-all">
                 <img className="w-6 h-6 m-2" src={facebook} />
                 <h1>Continue with Facebook</h1>
               </div>
