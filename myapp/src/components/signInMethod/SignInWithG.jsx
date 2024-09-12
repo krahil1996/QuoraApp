@@ -1,6 +1,6 @@
 import { signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../firebase/Setup";
-
+import { auth, googleProvider } from "../../firebase/Setup";
+// login by Google
 const googleSignIn = async (result) => {
   try {
     await signInWithPopup(auth, googleProvider).then(async (result) => {
