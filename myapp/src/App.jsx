@@ -2,11 +2,7 @@ import "./App.css";
 import Signup from "./components/Signup";
 
 const App = () => {
-  return (
-    <div>
-      <Signup />
-    </div>
-  );
+  return <Signup />;
 };
 
 export default App;
