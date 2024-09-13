@@ -62,7 +62,8 @@ const Navbar = (props: searchProp) => {
           </div>
         </div>
 
-        <div className=" flex items-center pl-1 border rounded-ssm  hover:border-blue-700 transition-all ease-in-out ">
+       <div className="flex items-center justify-center gap-3 h-10">
+       <div className=" flex items-center pl-1 border rounded-ssm  hover:border-blue-700 transition-all ease-in-out ">
           <img
             className="p-1 "
             style={{ height: "22px", width: "22px" }}
@@ -70,13 +71,14 @@ const Navbar = (props: searchProp) => {
             alt=""
           />
           <input
-            className="  w-72 p-2 outline-none "
+            className="  w-72 p-1 outline-none "
             type="text"
             name="search"
             id=""
             placeholder="Search Quora"
           />
         </div>
+        <div className="border-2 rounded-full text-sm p-1 w-24 h-8 text-center text-gray-700 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out">Try Quora+</div>
 
         <div className="p-4 rounded-md h-14  hover:bg-zinc-100 cursor-pointer transition-all ease-in-out ">
           <img
@@ -92,6 +94,12 @@ const Navbar = (props: searchProp) => {
             alt="language"
           />
         </div>
+        <div className="border border-r-2 rounded-full bg-red-700 hover:bg-red-800 text-white w-40 p-2 text-sm font-semibold "><button className="pl-1">Add question</button>
+        </div>
+        <div className="p-2 rounded-r-full border-l-2 border-red-800 hover:bg-red-800" style={{marginLeft:"-52px"}}>
+        <span ><svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5 8.5 7 7 7.005-7" className="icon_svg-stroke" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"></path></svg></span>
+        </div>
+       </div>
       </div>
     </div>
   );
