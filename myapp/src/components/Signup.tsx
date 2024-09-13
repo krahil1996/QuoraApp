@@ -143,7 +143,7 @@ const Signup = () => {
           <span>{"•"}</span> © Quora, Inc. 2024
         </div>
       </div>
-      {emailSignup ? <EmailSignup /> : ""}
+      {emailSignup ? <EmailSignup setEmailSignup={setEmailSignup} /> : ""}
     </div>
   );
 };

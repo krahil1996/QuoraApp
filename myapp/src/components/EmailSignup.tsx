@@ -1,15 +1,33 @@
-import React from "react";
-// import { useState } from "react";
-// import {
-//   Dialog,
-//   DialogBackdrop,
-//   DialogPanel,
-//   DialogTitle,
-// } from "@headlessui/react";
-// import { ExclamationTriangleIcon } from "@heroicons/React/24/outline";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  sendEmailVerification,
+} from "firebase/auth";
+import { auth } from "../firebase/setup";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export const EmailSignup = () => {
-  // const [open, setOpen] = useState(true);
+type emailType = {
+  setEmailSignup: any;
+};
+const EmailSignup = (props: emailType) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const Signup = async () => {
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      toast.success("Please verify the mail Id");
+      onAuthStateChanged(auth, (user: any) => {
+        sendEmailVerification(user);
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  console.log(auth);
   return (
     <div>
       <div
@@ -19,7 +37,7 @@ export const EmailSignup = () => {
         aria-modal="true"
       >
         <div
-          className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          className="fixed inset-0 bg-gray-800 bg-opacity-75 transition-opacity"
           aria-hidden="true"
         ></div>
 
@@ -27,7 +45,10 @@ export const EmailSignup = () => {
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
               <div className=" flex justify-center items-center rounded-full mx-1 mt-2 w-5 h-5 p-5  hover:bg-gray-100">
-                <button className="">
+                <button
+                  onClick={() => props?.setEmailSignup(false)}
+                  className=""
+                >
                   <svg
                     width="24"
                     height="24"
