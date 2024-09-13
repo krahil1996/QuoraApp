@@ -1,10 +1,14 @@
 import welcome from "../assets/back.jpg";
 import google from "../assets/google.png";
 import facebook from "../assets/fb.png";
-
+import googleSignIn from "./signInMethod/SignInWithG";
+import facebookSignin from "./signInMethod/SignInWithFB";
+import EmailSignup from "./EmailSignup";
+import { useState } from "react";
 import "../App.css";
 
 const Signup = () => {
+  const [emailSignup, setEmailSignup] = useState(false);
   return (
     <div
       className="flex items-center justify-center"
@@ -15,7 +19,7 @@ const Signup = () => {
         height: "100vh",
       }}
     >
-      <div className="bg-white min-h-fit w-cus rounded-ssm px-8 py-4 shadow-md shadow-gray-700 ">
+      <div className="bg-white h-11/12 w-cus rounded-ssm px-8 py-4 shadow-md shadow-gray-700 ">
         <h1 className="text-red-700 text-6xl font-clarendon text-center pt-4 ">
           Quora
         </h1>
@@ -37,15 +41,24 @@ const Signup = () => {
               .
             </h1>
             <div className=" flex flex-col gap-2 mt-4">
-              <div className="flex p-1 border border-spacing-1 rounded-ssm items-center cursor-pointer hover:bg-gray-100 ease-in transition-all ">
+              <div
+                onClick={googleSignIn}
+                className="flex p-1 border border-spacing-1 rounded-ssm items-center cursor-pointer hover:bg-gray-100 ease-in transition-all "
+              >
                 <img className="w-6 h-6 m-2 " src={google} />
                 <h1>Continue with Google</h1>
               </div>
-              <div className="flex p-1 border border-spacing-1 rounded-ssm items-center cursor-pointer hover:bg-gray-100 ease-in transition-all">
+              <div
+                onClick={facebookSignin}
+                className="flex p-1 border border-spacing-1 rounded-ssm items-center cursor-pointer hover:bg-gray-100 ease-in transition-all"
+              >
                 <img className="w-6 h-6 m-2" src={facebook} />
                 <h1>Continue with Facebook</h1>
               </div>
-              <div className=" p-1 rounded-3xl items-center text-center text-ssm text-gray-500 font-semibold cursor-pointer hover:bg-gray-100">
+              <div
+                onClick={() => setEmailSignup(true)}
+                className=" p-1 rounded-3xl items-center text-center text-ssm text-gray-500 font-semibold cursor-pointer hover:bg-gray-100"
+              >
                 <h1>Sign up with Email</h1>
               </div>
             </div>
@@ -89,9 +102,9 @@ const Signup = () => {
             <path
               d="m9 5 7 7-7 7.005"
               stroke="#666"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               fill="none"
-              stroke-linecap="round"
+              strokeLinecap="round"
             ></path>
           </svg>
         </div>
@@ -130,6 +143,7 @@ const Signup = () => {
           <span>{"•"}</span> © Quora, Inc. 2024
         </div>
       </div>
+      {emailSignup ? <EmailSignup /> : ""}
     </div>
   );
 };
