@@ -4,15 +4,11 @@ import EmailSignup from "./components/EmailSignup";
 import { useState } from "react";
 
 const App = () => {
-
   return (
     <div>
-
       <Signup />
-
     </div>
-
-  )
+  );
 };
 
 export default App;

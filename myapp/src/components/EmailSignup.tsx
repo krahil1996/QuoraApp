@@ -3,7 +3,7 @@ import {
   onAuthStateChanged,
   sendEmailVerification,
 } from "firebase/auth";
-import { auth } from "../firebase/setup";
+import { auth } from "../firebase/Setup";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
