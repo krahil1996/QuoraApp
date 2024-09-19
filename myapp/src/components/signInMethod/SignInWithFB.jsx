@@ -1,6 +1,6 @@
 // [START auth_facebook_signin_popup_modular]
 import { signInWithPopup } from "firebase/auth";
-import { auth, facebookProvider } from "../../firebase/Setup";
+import { auth, facebookProvider } from "../firebase/Setup";
 
 const facebookSignin = async () => {
   try {
