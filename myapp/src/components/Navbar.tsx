@@ -22,8 +22,8 @@ type searchProp = {
 const Navbar = (props: searchProp) => {
   const [post, setPost] = useState(false);
   return (
-    <div className="shadow-md w-screen bg-white  h-auto">
-      <div className="flex items-center justify-center flex-wrap gap-5 h-14">
+    <div className="shadow-md max-w-screen-full bg-white">
+      <div className="flex items-center justify-center flex-wrap gap-5 h-auto">
         <img className="w-22 h-6 " src={logo} alt="logo" />
         <div className="flex flex-row ">
           <div className="p-4 rounded-md h-14 hover:bg-zinc-100 cursor-pointer transition-all ease-in-out">
@@ -79,8 +79,10 @@ const Navbar = (props: searchProp) => {
               placeholder="Search Quora"
             />
           </div>
-          <div className="border-2 rounded-full text-sm p-1 w-24 h-8 text-center text-gray-700 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out">
-            Try Quora+
+          <div className="border-2 rounded-full h-8  hover:bg-zinc-100 cursor-pointer transition-all ease-in-out">
+            <div className="w-auto py-1 px-4 font-semibold text-sm text-gray-500">
+              Try Quora+
+            </div>
           </div>
 
           <div className="p-4 rounded-md h-14  hover:bg-zinc-100 cursor-pointer transition-all ease-in-out ">

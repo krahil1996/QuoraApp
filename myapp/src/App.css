@@ -48,30 +48,26 @@
 
 /* CSS for Home page */
 
-body{
+body {
   background-color: rgb(247, 247, 248);
 }
-header{
+header {
   background-color: white;
   min-height: 3rem;
   border-bottom: 1px solid #dee0e1;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.04);
-
-  
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04);
 }
 
-.list{
+.list {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   padding: 10px;
   gap: 15px;
-
 }
 
-
-.container-1{
+.container-1 {
   width: auto;
   height: auto;
   display: flex;
@@ -81,52 +77,51 @@ header{
   margin-top: 0.5rem;
   box-sizing: border-box;
 }
-.main-1{
+.main-1 {
   height: 30rem;
   width: 60%;
   background-color: rgb(207, 133, 36);
   box-shadow: 5px 5px 5px grey;
   border-radius: 5px;
-
 }
 
-.left_sidebar{
- background: none;
- background-color: #dee0e1;
- width: 20%;
+.left_sidebar {
+  background: none;
+  background-color: #dee0e1;
+  width: 20%;
 }
-hr{
+hr {
   color: grey;
 }
-.left_sidebar ul li button{
+.left_sidebar ul li button {
   box-sizing: border-box;
-  background-color:#b8b9ba ;
+  background-color: #b8b9ba;
   font-size: 15px;
   margin: 5px;
   padding: 5px;
-
 }
-.text{
+.text {
   font-size: 12px;
   color: grey;
   margin-left: 50%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-.Search{
+.Search {
   box-sizing: border-box;
   border: 1px solid grey;
   border: 2px;
 }
-.right_sidebar{
+.right_sidebar {
   background-color: aqua;
-  height:30rem ;
+  height: 30rem;
   width: 20%;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px grey;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px grey;
 }
 
 /* sidebar . font resize */
 
-span{
+span {
   font-size: small;
 }

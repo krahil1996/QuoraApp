@@ -4,24 +4,65 @@ import Answer from "../assets/Navicon/edit.png";
 import Question from "../assets/Navicon/ask.png";
 import Post from "../assets/Navicon/pencil.png";
 
-const home = () => {
-    return (
-        <div className="w-[600px] h-screen bg-slate-100 border-gray-300 border-2 rounded-md">
-            <div className="h-28 w-[600px] rounded-lg bg-white border-2">
-                <div className="flex flex-row" >
-                    <div className="p-4 "><img src={Profile} alt="" style={{ height: "30px", width: "30px", }} /></div>
-                    <div className="border-2 rounded-full text-lg p-1 h-10 m-3 text-center text-gray-700 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out w-[500px]"><input className="w-[490px] bg-slate-100" type="text" placeholder="What do you want to ask or share?" /></div>
-                </div>
-                <div className="flex flex-row">
-                    <div className=" rounded-md h-10 w-32 text-center text-gray-700 font-semibold m-8 hover:bg-zinc-100 cursor-pointer transition-all ease-in-out flex flex-row"><img style={{ height: "24px", width: "24px", margin: "5px" }} src={Question} alt="" />Ask </div>
-                    <div>|</div>
-                    <div className=" rounded-md h-10 w-32 text-center text-gray-700 font-semibold ml-8 hover:bg-zinc-100 cursor-pointer transition-all ease-in-out flex flex-row"><img style={{ height: "24px", width: "24px", margin: "5px" }} src={Answer} alt="" />Answer </div>
-                    <div>|</div>
-                    <div className=" rounded-md h-10 w-32 text-center text-gray-700 font-semibold ml-8 hover:bg-zinc-100 cursor-pointer transition-all ease-in-out flex flex-row"><img style={{ height: "24px", width: "24px", margin: "5px" }} src={Post} alt="" />post</div>
-                </div>
+const Home = () => {
+  return (
+    <div className="w-auto bg-slate-100 border-gray-300">
+      <div className="h-auto rounded-lg bg-white border-2 ">
+        <div className="flex flex-row">
+          <div className="p-4 ">
+            <img
+              src={Profile}
+              alt=""
+              style={{ height: "30px", width: "36px" }}
+            />
+          </div>
+          <div className="border-2 rounded-full text-md w-full h-auto m-3 bg-gray-100 text-gray-700 hover:bg-zinc-200 transition-all ease-in-out">
+            <input
+              className=" w-full p-1 ml-2 outline-none bg-transparent cursor-pointer"
+              type="text"
+              placeholder="What do you want to ask or share?"
+            />
+          </div>
+        </div>
+        <div className="flex flex-row p-1 h-auto ">
+
+          <div className="flex center rounded-full text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-2 ">
+            
+              <img
+                style={{ height: "18px", width: "18px", margin: "5px" }}
+                src={Question}
+                alt=""
+              />
+            
+            Ask
+          </div>
+          <div className="flex rounded-full text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-2">
+            
+              <img
+                style={{ height: "18px", width: "18px", margin: "5px" }}
+                src={Answer}
+                alt=""
+              />
+           
+           Answer
+          </div>
+          <div className="flex rounded-full text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-2">
+            <div className="">
+              <img
+                style={{ height: "18px", width: "18px", margin: "5px" }}
+                src={Post}
+                alt=""
+              />
             </div>
+            <div>Post</div>
+          </div>
+
+
 
         </div>
-    )
-}
-export default home;
+
+      </div>
+    </div>
+  );
+};
+export default Home;

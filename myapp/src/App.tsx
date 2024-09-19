@@ -6,10 +6,10 @@ const App = () => {
   return (
     <div>
 
-      <div className="fixed">
+      <div className="">
         {/* <Home /> */}
       </div>
-      <Signup />
+      <Main />
     </div>
   );
 };
