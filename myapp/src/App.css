@@ -124,3 +124,9 @@ hr{
     border-radius: 5px;
     box-shadow: 5px 5px 5px grey;
 }
+
+/* sidebar . font resize */
+
+span{
+  font-size: small;
+}
