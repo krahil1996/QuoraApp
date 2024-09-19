@@ -10,15 +10,11 @@ import { useState } from "react";
 const App = () => {
   return (
     <div>
-<<<<<<< HEAD:myapp/src/App.jsx
 
       <div className="fixed">
-        <Home />
+        {/* <Home /> */}
       </div>
-      {/* <Signup /> */}
-=======
       <Signup />
->>>>>>> main:myapp/src/App.tsx
     </div>
   );
 };
