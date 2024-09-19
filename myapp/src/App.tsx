@@ -5,10 +5,7 @@ import Signup from "./components/Signup";
 const App = () => {
   return (
     <div>
-      <div className="fixed">
-        <Main />
-      </div>
-      {/* <Signup /> */}
+      <Main />
     </div>
   );
 };
