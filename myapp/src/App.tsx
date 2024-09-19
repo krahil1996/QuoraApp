@@ -1,6 +1,6 @@
 import "./App.css";
 import Signup from "./components/Signup";
-import EmailSignup from "./components/EmailSignup";
+import EmailSignup from "./components/signInMethod/EmailSignup";
 import { useState } from "react";
 
 const App = () => {
