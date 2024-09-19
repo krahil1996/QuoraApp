@@ -1,12 +1,14 @@
 import "./App.css";
+import Main from "./components/main";
 import Signup from "./components/Signup";
-import EmailSignup from "./components/signInMethod/EmailSignup";
-import { useState } from "react";
 
 const App = () => {
   return (
     <div>
-      <Signup />
+      <div className="fixed">
+        <Main />
+      </div>
+      {/* <Signup /> */}
     </div>
   );
 };
