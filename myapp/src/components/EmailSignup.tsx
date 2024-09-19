@@ -1,5 +1,9 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase/Setup";
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  onAuthStateChanged,
+} from "firebase/auth";
+import { auth } from "./firebase/Setup";
 import { useState } from "react";
 
 type emailType = {
@@ -25,10 +29,15 @@ const EmailSignup = (props: emailType) => {
           console.log(accessToken);
         }
       );
-    } catch (FirebaseError) {
-      console.log(FirebaseError);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      onAuthStateChanged(auth, (user: any) => {
+        sendEmailVerification(user);
+      });
+    } catch (err) {
+      console.log(err);
     }
   };
+  console.log(auth);
 
   return (
     <div>
@@ -61,10 +70,10 @@ const EmailSignup = (props: emailType) => {
                       d="m5.5 5.5 13 13m-13 0 13-13"
                       className="icon_svg-stroke"
                       stroke="#666"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       fill="none"
-                      fill-rule="evenodd"
-                      stroke-linecap="round"
+                      fillRule="evenodd"
+                      strokeLinecap="round"
                     ></path>
                   </svg>
                 </button>
@@ -101,7 +110,7 @@ const EmailSignup = (props: emailType) => {
                   onClick={Signup}
                   className="   bg-blue-600 text-white w-20 h-10 rounded-full focus:outline-white "
                 >
-                  Next
+                  Submit
                 </button>
               </div>
             </div>

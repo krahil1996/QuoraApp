@@ -1,11 +1,6 @@
 import "./App.css";
+import Main from "./components/main";
 import Signup from "./components/Signup";
-import EmailSignup from "./components/EmailSignup";
-import NavBar from "./components/Navbar"
-import Sidebar from "./components/sidebar"
-import Rightbar from "./components/rightbar"
-import Home from "./components/home"
-import { useState } from "react";
 
 const App = () => {
   return (
