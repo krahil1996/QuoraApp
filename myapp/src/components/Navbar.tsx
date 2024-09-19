@@ -9,11 +9,11 @@ import Notifications from "../assets/Navicon/bell.png";
 import search from "../assets/Navicon/lens.png";
 import Profile from "../assets/Navicon/account.png";
 import Languages from "../assets/Navicon/globe.png";
+import { useState } from "react";
 import Avatar from "react-avatar";
-import { auth } from "../firebase/setup";
+import { auth } from "./firebase/setup";
 import account from "../assets/account.png";
 import PostPopup from "./PostPopup";
-import { useState } from "react";
 
 type searchProp = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

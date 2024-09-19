@@ -3,7 +3,7 @@ import google from "../assets/google.png";
 import facebook from "../assets/fb.png";
 import googleSignIn from "./signInMethod/SignInWithG";
 import facebookSignin from "./signInMethod/SignInWithFB";
-import EmailSignup from "./signInMethod/EmailSignup";
+import EmailSignup from "./EmailSignup";
 import { useState } from "react";
 import "../App.css";
 

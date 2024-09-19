@@ -3,7 +3,7 @@ import {
   sendEmailVerification,
   onAuthStateChanged,
 } from "firebase/auth";
-import { auth } from "../../firebase/Setup";
+import { auth } from "./firebase/Setup";
 import { useState } from "react";
 
 type emailType = {
