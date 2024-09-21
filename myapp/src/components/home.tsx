@@ -1,7 +1,7 @@
 import Lbar from "./Lbar";
 
 import Rbar from "./Rbar";
-import Middle from "./middle";
+import Middle from "./Middle";
 
 const Home = () => {
   return (

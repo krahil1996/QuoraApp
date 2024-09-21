@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
-import Home from "./Home";
+import Home from "./home";
 
 const main = () => {
   const [search, setSearch] = useState("");
