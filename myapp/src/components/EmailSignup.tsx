@@ -36,6 +36,8 @@ const EmailSignup = (props: emailType) => {
     } catch (err) {
       console.log(err);
     }
+
+    alert("you have succesfully Registred");
   };
   console.log(auth);
 
