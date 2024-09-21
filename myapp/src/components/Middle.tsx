@@ -15,7 +15,7 @@ import Vedio from "../assets/vedio.mp4"
 
 
 
-const Home = () => {
+const Middle = () => {
 
   return (
     <div className="w-[700px] bg-slate-100 border-gray-300">
@@ -101,7 +101,7 @@ const Home = () => {
                   <button><img style={{ height: "24px", width: "24px", }} src={Down} alt="" /></button>
                 </div></div>
 
-              <button className="flex items-center space-x-1 hover:bg-zinc-100">
+              <button className="flex items-center space-x-1 hover:bg-zinc-100 rounded-full">
                 <img style={{ height: "15px", width: "15px" }} src={Comment} alt="" />
                 <span>Comment</span>
               </button>
@@ -179,4 +179,4 @@ const Home = () => {
 
   );
 };
-export default Home;
+export default Middle;

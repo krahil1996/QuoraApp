@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Lbar from "./Lbar";
 import Rbar from "./Rbar";
-import Home from "./home";
+import Home from "./Middle";
 
 const main = () => {
   return (
