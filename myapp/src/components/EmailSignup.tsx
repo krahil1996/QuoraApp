@@ -25,9 +25,11 @@ const EmailSignup = (props: emailType) => {
           console.log(accessToken);
         }
       );
-    } catch (FirebaseError) {
-      console.log(FirebaseError);
+    } catch (error) {
+      console.log(error);
     }
+
+    alert("you have succesfully Registred");
   };
 
   return (

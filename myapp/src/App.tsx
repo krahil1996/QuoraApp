@@ -1,21 +1,21 @@
 import "./App.css";
 import Signup from "./components/Signup";
 import EmailSignup from "./components/EmailSignup";
-import NavBar from "./components/Navbar"
+import NavBar from "./components/Navbar";
 import { useState } from "react";
 
 const App = () => {
+  const [navbar, setNavbar] = useState(true);
   return (
     <div>
-<<<<<<< HEAD:myapp/src/App.jsx
-
-      <div className="fixed">
-        <NavBar />
-      </div>
-      {/* <Signup /> */}
-=======
       <Signup />
->>>>>>> main:myapp/src/App.tsx
+      <div>
+        <div className="fixed">
+          <NavBar setSearch={""} />
+        </div>
+      </div>
+
+      <div>{navbar ? <App setNavbar={setNavbar} /> : ""}</div>
     </div>
   );
 };
