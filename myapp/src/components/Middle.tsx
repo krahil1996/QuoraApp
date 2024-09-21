@@ -186,7 +186,7 @@ const Middle = () => {
         </div>
       </div>
       <div>
-        <div className="max-w-2xl mx-auto mt-2 p-4 bg-white shadow-md rounded-lg">
+        <div className="max-w-3xl mx-auto mt-2 p-6 bg-white shadow-md rounded-lg">
           <div className="flex flex-row items-center justify-between">
             <div className="flex items-center">
               <img
