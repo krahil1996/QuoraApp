@@ -4,7 +4,8 @@ import { auth, facebookProvider } from "../firebase/Setup";
 
 const facebookSignin = async () => {
   try {
-    await signInWithPopup(auth, facebookProvider).then((result) => {
+    await signInWithPopup(auth, facebookProvider)
+    auth?.currentUser !== null && navigate("/main").then((result) => {
       const accessToken = result.user.accessToken;
       const Uname = result.user.displayName;
       const email = result.user.email;

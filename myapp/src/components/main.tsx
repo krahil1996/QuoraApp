@@ -1,24 +1,14 @@
-import Navbar from "../components/Navbar";
-import Lbar from "./Lbar";
-import Rbar from "./Rbar";
-import Home from "./home";
+import { useState } from "react";
+import Navbar from "./Navbar";
+import Home from "./Home";
 
 const main = () => {
+  const [search, setSearch] = useState("");
   return (
     <>
-      <div className="">
-        <Navbar setSearch={true} />
-      </div>
-      <div className="grid grid-flow-col-dense m-5">
-        <div className="flex justify-self-end w-52">
-          <Lbar />
-        </div>
-        <div>
-          <Home />
-        </div>
-        <div className="flex justify-self-start ">
-          <Rbar />
-        </div>
+      <div className="h-screen w-screen">
+        <Navbar setSearch={setSearch} />
+        <Home search={search} />
       </div>
     </>
   );
