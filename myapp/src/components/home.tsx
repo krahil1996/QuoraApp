@@ -5,14 +5,14 @@ import Middle from "./Middle";
 
 const Home = () => {
   return (
-    <div className="grid grid-flow-col-dense m-5">
-      <div className="flex justify-self-end w-52">
+    <div className="flex flex-row m-5 gap-3">
+      <div className="flex w-1/5">
         <Lbar />
       </div>
-      <div>
+      <div className="flex w-3/5">
         <Middle />
       </div>
-      <div className="flex justify-self-start ">
+      <div className="flex justify-self-start w-1/5 ">
         <Rbar />
       </div>
     </div>
