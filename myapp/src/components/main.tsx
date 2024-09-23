@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
-import Lbar from "./Lbar";
-import Rbar from "./Rbar";
+
 import Home from "./home";
 
 const main = () => {
