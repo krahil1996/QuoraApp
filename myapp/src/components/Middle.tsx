@@ -230,7 +230,7 @@ const Middle = () => {
           </div>
 
           <div className="mt-4">
-            <h2 className="text-xl font-bold">
+            <h2 className="text-2xl font-bold my-4">
               How can I learn web development effectively?
             </h2>
             <p className="mt-2 text-gray-700">
@@ -239,11 +239,13 @@ const Middle = () => {
               backend technologies.
             </p>
           </div>
-          <div className="py-2">
-            <video className=" w-full object-cover md:h-full" controls>
-              <source src={Vedio} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div>
+            <div className="py-2">
+              <video className=" w-full object-cover md:h-full" controls>
+                <source src={Vedio} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
 
           <div className="py-4 flex flex-row space-x-4 text-gray-500 justify-between">
