@@ -74,7 +74,7 @@ const Middle = () => {
           </div>
         </div>
         <div className="flex flex-row p-1 h-auto mt-0">
-          <div className="flex center rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-2 py-1">
+          <div className="flex items-center rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-2 py-1">
             <img
               style={{ height: "16px", width: "16px", margin: "5px" }}
               src={Question}
@@ -83,7 +83,7 @@ const Middle = () => {
             Ask
           </div>
           <div className="border-x-2">
-            <div className="flex rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-20 py-1">
+            <div className="flex items-center rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-20 py-1">
               <img
                 style={{ height: "16px", width: "16px", margin: "5px" }}
                 src={Answer}
@@ -92,7 +92,7 @@ const Middle = () => {
               Answer
             </div>
           </div>
-          <div className="flex rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-2 py-1">
+          <div className="flex items-center rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-2 py-1">
             <div className="">
               <img
                 style={{ height: "16px", width: "16px", margin: "5px" }}
