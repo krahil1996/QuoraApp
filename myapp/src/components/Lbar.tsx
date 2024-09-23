@@ -12,8 +12,12 @@ const Lbar = () => {
             <button> Create Space </button>
           </div>
         </div>
+        <div className="flex flex-row">
+          <img src="" alt="" />
+          <h3></h3>
+        </div>
       </div>
-
+       
       <div className="p-4">
         <div className="text-gray-400">
           <ul>

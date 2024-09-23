@@ -14,6 +14,46 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Vedio from "../assets/vedio.mp4";
 
 const Middle = () => {
+  // const questionRef = collection(storage, "questions");
+  // const [questionData, setQuestionData] = useState<any>([]);
+  // const [commentToggle, setCommentToggle] = useState(false);
+  // const [questionId, setQuestionId] = useState("");
+  // const [answers, setAnswers] = useState("");
+  // const [post, setPost] = useState(false);
+
+  // const getQuestion = async () => {
+  //   try {
+  //     const data = await getDocs(questionRef);
+  //     const filteredData = data.docs.map((doc) => ({
+  //       ...doc.data(),
+  //       id: doc.id,
+  //     }));
+  //     setQuestionData(filteredData);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+  // const answerDoc = doc(
+  //   storage,
+  //   "questions",
+  //   `${questionId ? questionId : Math.random()}`
+  // );
+  // const answerRef = collection(answerDoc, "answers");
+
+  // const addAnswer = async () => {
+  //   try {
+  //     await addDoc(answerRef, {
+  //       ans: answers,
+  //       email: auth?.currentUser?.email,
+  //     });
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   getQuestion();
+  // }, [questionData]);
   return (
     <div className="w-[700px] bg-slate-100 border-gray-300">
       <div className="h-auto rounded-lg bg-white border-2 ">
@@ -34,7 +74,7 @@ const Middle = () => {
           </div>
         </div>
         <div className="flex flex-row p-1 h-auto mt-0">
-          <div className="flex center rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-2 py-1">
+          <div className="flex items-center rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-2 py-1">
             <img
               style={{ height: "16px", width: "16px", margin: "5px" }}
               src={Question}
@@ -43,7 +83,7 @@ const Middle = () => {
             Ask
           </div>
           <div className="border-x-2">
-            <div className="flex rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-20 py-1">
+            <div className="flex items-center rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-20 py-1">
               <img
                 style={{ height: "16px", width: "16px", margin: "5px" }}
                 src={Answer}
@@ -52,7 +92,7 @@ const Middle = () => {
               Answer
             </div>
           </div>
-          <div className="flex rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-2 py-1">
+          <div className="flex items-center rounded-full text-sm text-gray-500 font-semibold hover:bg-zinc-100 cursor-pointer transition-all ease-in-out justify-center w-full px-2 py-1">
             <div className="">
               <img
                 style={{ height: "16px", width: "16px", margin: "5px" }}
@@ -146,7 +186,7 @@ const Middle = () => {
         </div>
       </div>
       <div>
-        <div className="max-w-2xl mx-auto mt-2 p-4 bg-white shadow-md rounded-lg">
+        <div className="max-w-3xl mx-auto mt-2 p-6 bg-white shadow-md rounded-lg">
           <div className="flex flex-row items-center justify-between">
             <div className="flex items-center">
               <img

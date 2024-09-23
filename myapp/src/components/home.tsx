@@ -1,7 +1,7 @@
 import Lbar from "./Lbar";
-
+import Middle from "./Middle";
 import Rbar from "./Rbar";
-import Middle from "./middle";
+
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
         <Lbar />
       </div>
       <div>
-        <Middle />
+        <Middle/>
       </div>
       <div className="flex justify-self-start ">
         <Rbar />

@@ -117,9 +117,9 @@ const Navbar = (props: searchProp) => {
                   d="m5 8.5 7 7 7.005-7"
                   className="icon_svg-stroke"
                   stroke="white"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   fill="none"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                 ></path>
               </svg>
             </span>
