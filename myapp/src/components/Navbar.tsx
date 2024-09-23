@@ -7,13 +7,11 @@ import Answer from "../assets/Navicon/edit.png";
 import Spaces from "../assets/Navicon/group.png";
 import Notifications from "../assets/Navicon/bell.png";
 import search from "../assets/Navicon/lens.png";
-import Profile from "../assets/Navicon/account.png";
 import Languages from "../assets/Navicon/globe.png";
+import account from "../assets/Navicon/account.png";
 import { useState } from "react";
 import Avatar from "react-avatar";
-import { auth } from "./firebase/setup";
-import account from "../assets/account.png";
-import PostPopup from "./PostPopup";
+import { auth } from "./firebase/Setup";
 
 type searchProp = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -85,15 +83,20 @@ const Navbar = (props: searchProp) => {
             </div>
           </div>
 
-          <div className="p-4 rounded-md h-14  hover:bg-zinc-100 cursor-pointer transition-all ease-in-out ">
-            <img
-              style={{ height: "24px", width: "24px" }}
-              src={Profile}
-              alt="profile"
-            />
+          <div className=" p-4 rounded-md hover:bg-zinc-100 cursor-pointer transition-all ease-in-out ">
+            {auth?.currentUser?.emailVerified ? (
+              <Avatar
+                round
+                size="25"
+                name={auth?.currentUser?.email ?? account}
+              />
+            ) : (
+              <Avatar round size="25" src={account} />
+            )}
           </div>
           <div className="p-4 rounded-md h-14  hover:bg-zinc-100 cursor-pointer transition-all ease-in-out  ">
             <img
+              sizes="25"
               style={{ height: "24px", width: "24px" }}
               src={Languages}
               alt="language"
@@ -117,9 +120,9 @@ const Navbar = (props: searchProp) => {
                   d="m5 8.5 7 7 7.005-7"
                   className="icon_svg-stroke"
                   stroke="white"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   fill="none"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                 ></path>
               </svg>
             </span>

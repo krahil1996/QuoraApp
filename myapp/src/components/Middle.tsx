@@ -1,17 +1,20 @@
 import "../App.css"; // Optional: if you have a CSS file for styling
-import Profile from "../assets/Navicon/account.png";
+
 import Answer from "../assets/Navicon/edit.png";
 import Question from "../assets/Navicon/ask.png";
 import Post from "../assets/Navicon/pencil.png";
 import Like from "../assets/Navicon/up.png";
 import Comment from "../assets/Navicon/comment.png";
 import Share from "../assets/Navicon/share.png";
-import Pic from "../assets/Navicon/jhon.jpeg";
 import Down from "../assets/Navicon/down.png";
+import account from "../assets/Navicon/account.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Vedio from "../assets/vedio.mp4";
+import Avatar from "react-avatar";
+
+import { auth } from "./firebase/Setup";
 
 const Middle = () => {
   // const questionRef = collection(storage, "questions");
@@ -59,11 +62,15 @@ const Middle = () => {
       <div className="h-auto rounded-lg bg-white border-2 ">
         <div className="flex flex-row">
           <div className="p-3 ">
-            <img
-              src={Profile}
-              alt=""
-              style={{ height: "30px", width: "36px" }}
-            />
+            {auth?.currentUser?.emailVerified ? (
+              <Avatar
+                round
+                size="25"
+                name={auth?.currentUser?.email ?? account}
+              />
+            ) : (
+              <Avatar round size="25" src={account} />
+            )}
           </div>
           <div className="border-2 rounded-full text-sm w-full h-auto m-3 bg-gray-100 text-gray-700 hover:bg-zinc-200 transition-all ease-in-out">
             <input
@@ -105,37 +112,45 @@ const Middle = () => {
         </div>
       </div>
       <div>
-        <div className="max-w-3xl mx-auto my-4 bg-white rounded-lg shadow-md p-6">
-          <div className="flex flex-row items-center justify-between">
-            <div className="flex items-center">
-              <img
-                style={{ height: "35px", width: "35px", borderRadius: "50%" }}
-                src={Pic}
-                alt=""
-              />
-              <div className="ml-3">
+        <div className="max-w-3xl mx-auto my-4 bg-white rounded-lg shadow-md px-2">
+          <div className="flex flex-row justify-between">
+            <div className="flex items-center p-2">
+              <div className="flex">
+                {auth?.currentUser?.emailVerified ? (
+                  <Avatar
+                    round
+                    size="25"
+                    name={auth?.currentUser?.email ?? account}
+                  />
+                ) : (
+                  <Avatar round size="25" src={account} />
+                )}
+              </div>
+              <div className=" flex flex-col ml-3">
                 <p className="font-semibold">John Doe</p>
                 <p className="text-sm text-gray-500">20 September 2024</p>
               </div>
             </div>
-            <div className="-mt-12 justify-between hover:bg-zinc-100 ">
-              <button className="text-gray-500 text-sm">
+            <div className="w-10 h-10 text-center p-2 rounded-full mt-1 hover:bg-gray-100 cursor-pointer transition-all ease-in-out">
+              <button className="text-gray-500 text-xl ">
                 <FontAwesomeIcon icon={faTimes} />
               </button>{" "}
             </div>
           </div>
 
-          <h1 className="text-2xl font-bold my-4">
-            What are the benefits of learning Full Stack Development?
-          </h1>
-          <p className="text-gray-700 leading-relaxed text-justify">
-            Learning full stack development can be highly rewarding. You’ll gain
-            skills in both front-end and back-end development, enabling you to
-            build complete web applications from scratch. Additionally, it opens
-            up numerous career opportunities as full stack developers are in
-            high demand...
-          </p>
-          <div className="mt-4 flex flex-row space-x-4 text-gray-500 justify-between">
+          <div className="px-2">
+            <h1 className="text-2xl font-bold my-4">
+              What are the benefits of learning Full Stack Development?
+            </h1>
+            <p className="text-gray-700 leading-relaxed text-justify">
+              Learning full stack development can be highly rewarding. You’ll
+              gain skills in both front-end and back-end development, enabling
+              you to build complete web applications from scratch. Additionally,
+              it opens up numerous career opportunities as full stack developers
+              are in high demand...
+            </p>
+          </div>
+          <div className=" py-4 flex flex-row space-x-4 text-gray-500 justify-between">
             <div className="flex flex-row items-center space-x-4">
               <div className="border border-r-2 rounded-full flex flex-row bg-slate-100 hover:bg-zinc-200">
                 <div className="flex flex-row ">
@@ -177,7 +192,7 @@ const Middle = () => {
                 <span>Share</span>
               </button>
             </div>
-            <div className="flex flex-row hover:bg-zinc-100">
+            <div className="w-10 h-10 text-center p-2 rounded-full mt-1 hover:bg-gray-100 cursor-pointer transition-all ease-in-out">
               <i className="">
                 <FontAwesomeIcon icon={faEllipsis} />
               </i>
@@ -186,14 +201,20 @@ const Middle = () => {
         </div>
       </div>
       <div>
-        <div className="max-w-3xl mx-auto mt-2 p-6 bg-white shadow-md rounded-lg">
-          <div className="flex flex-row items-center justify-between">
-            <div className="flex items-center">
-              <img
-                style={{ height: "35px", width: "35px", borderRadius: "50%" }}
-                src={Pic}
-                alt=""
-              />
+        <div className="max-w-3xl mx-auto my-4 bg-white rounded-lg shadow-md px-2">
+          <div className="flex flex-row justify-between">
+            <div className="flex items-center p-2">
+              <div className="flex">
+                {auth?.currentUser?.emailVerified ? (
+                  <Avatar
+                    round
+                    size="25"
+                    name={auth?.currentUser?.email ?? account}
+                  />
+                ) : (
+                  <Avatar round size="25" src={account} />
+                )}
+              </div>
               <div className="ml-3">
                 <p className="font-semibold">John Doe</p>
                 <p className="text-sm text-gray-500">
@@ -201,10 +222,10 @@ const Middle = () => {
                 </p>
               </div>
             </div>
-            <div className="-mt-12 justify-between hover:bg-zinc-100 ">
-              <button className="text-gray-500 text-sm">
+            <div className="w-10 h-10 text-center p-2 rounded-full mt-1 hover:bg-gray-100 cursor-pointer transition-all ease-in-out">
+              <button className="text-gray-500 text-xl ">
                 <FontAwesomeIcon icon={faTimes} />
-              </button>{" "}
+              </button>
             </div>
           </div>
 
@@ -218,17 +239,17 @@ const Middle = () => {
               backend technologies.
             </p>
           </div>
-          <div className="md:flex-shrink-0">
-            <video className="h-48 w-full object-cover md:h-full" controls>
+          <div className="py-2">
+            <video className=" w-full object-cover md:h-full" controls>
               <source src={Vedio} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
 
-          <div className="mt-4 flex flex-row items-center space-x-4 text-gray-500 justify-between">
+          <div className="py-4 flex flex-row space-x-4 text-gray-500 justify-between">
             <div className="flex flex-row items-center space-x-4">
               <div className="border border-r-2 rounded-full flex flex-row bg-slate-100 hover:bg-zinc-200">
-                <div className="flex flex-row ">
+                <div className="flex flex-row  ">
                   <button className="flex items-center space-x-1 pl-1 pr-2">
                     <img
                       style={{ height: "24px", width: "24px" }}
@@ -271,8 +292,7 @@ const Middle = () => {
                 <span>Share</span>
               </button>
             </div>
-
-            <div className="flex flex-row hover:bg-zinc-100">
+            <div className="w-10 h-10 text-center p-2 rounded-full mt-1 hover:bg-gray-100 cursor-pointer transition-all ease-in-out">
               <i className="">
                 <FontAwesomeIcon icon={faEllipsis} />
               </i>

@@ -10,14 +10,8 @@ const main = () => {
         <Navbar setSearch={true} />
       </div>
       <div className="grid grid-flow-col-dense m-5">
-        <div className="flex justify-self-end w-52">
-          <Lbar />
-        </div>
         <div>
           <Home />
-        </div>
-        <div className="flex justify-self-start ">
-          <Rbar />
         </div>
       </div>
     </>
