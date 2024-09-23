@@ -6,11 +6,9 @@ import facebookSignin from "./signInMethod/SignInWithFB";
 import EmailSignup from "./EmailSignup";
 import { useState } from "react";
 import "../App.css";
-import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [emailSignup, setEmailSignup] = useState(false);
-  const navigate = useNavigate();
 
   return (
     <div

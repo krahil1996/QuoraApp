@@ -1,15 +1,21 @@
 import { signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../firebase/Setup";
-import { useNavigate } from "react-router-dom";
 // login by Google
-const navigate = useNavigate();
-
-
 const googleSignIn = async (result) => {
-
   try {
     await signInWithPopup(auth, googleProvider)
-    auth?.currentUser !== null && navigate("/index")
+    auth?.currentUser !== null && navigate("/main")
+      .then(async (result) => {
+
+        const Uname = result.user.displayName;
+        const email = result.user.email;
+        const pic = result.user.photoURL;
+        const accessToken = result.user.accessToken;
+        console.log(Uname);
+        console.log(email);
+        console.log(pic);
+        console.log(accessToken);
+      });
   } catch (err) {
     console.log("error");
   }
