@@ -58,7 +58,7 @@ const Middle = () => {
   //   getQuestion();
   // }, [questionData]);
   return (
-    <div className="w-[700px] bg-slate-100 border-gray-300">
+    <div className="w-auto bg-slate-100 border-gray-300">
       <div className="h-auto rounded-lg bg-white border-2 ">
         <div className="flex flex-row">
           <div className="p-3 ">
@@ -112,7 +112,7 @@ const Middle = () => {
         </div>
       </div>
       <div>
-        <div className="max-w-3xl mx-auto my-4 bg-white rounded-lg shadow-md px-2">
+        <div className="w-auto mx-auto my-4 bg-white rounded-lg shadow-md px-2 ">
           <div className="flex flex-row justify-between">
             <div className="flex items-center p-2">
               <div className="flex">
@@ -201,7 +201,7 @@ const Middle = () => {
         </div>
       </div>
       <div>
-        <div className="max-w-3xl mx-auto my-4 bg-white rounded-lg shadow-md px-2">
+        <div className="w-auto mx-auto my-4 bg-white rounded-lg shadow-md px-2">
           <div className="flex flex-row justify-between">
             <div className="flex items-center p-2">
               <div className="flex">
