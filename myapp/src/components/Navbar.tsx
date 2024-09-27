@@ -86,12 +86,13 @@ const Navbar = (props: searchProp) => {
           </div>
 
           <div className=" p-4 rounded-md hover:bg-zinc-100 cursor-pointer transition-all ease-in-out ">
-            {auth?.currentUser?.emailVerified ? (
+            {auth?.currentUser?.displayName ? (
               <Avatar
+                src={`${auth?.currentUser?.photoURL ?? account}`}
                 round
                 size="25"
                 title={`Login as ${auth.currentUser.displayName}`}
-                name={auth?.currentUser?.email ?? account}
+                
               />
             ) : (
               <Avatar round size="25" src={account} />

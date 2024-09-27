@@ -64,9 +64,10 @@ const Middle = () => {
           <div className="p-3 ">
             {auth?.currentUser?.emailVerified ? (
               <Avatar
+                src={`${auth?.currentUser?.photoURL ?? account}`}
                 round
                 size="25"
-                name={auth?.currentUser?.email ?? account}
+                title={`Login as ${auth.currentUser.displayName}`}
               />
             ) : (
               <Avatar round size="25" src={account} />
@@ -118,9 +119,10 @@ const Middle = () => {
               <div className="flex">
                 {auth?.currentUser?.emailVerified ? (
                   <Avatar
+                    src={`${auth?.currentUser?.photoURL ?? account}`}
                     round
                     size="25"
-                    name={auth?.currentUser?.email ?? account}
+                    title={`Login as ${auth.currentUser.displayName}`}
                   />
                 ) : (
                   <Avatar round size="25" src={account} />
@@ -207,9 +209,10 @@ const Middle = () => {
               <div className="flex">
                 {auth?.currentUser?.emailVerified ? (
                   <Avatar
+                    src={`${auth?.currentUser?.photoURL ?? account}`}
                     round
                     size="25"
-                    name={auth?.currentUser?.email ?? account}
+                    title={`Login as ${auth.currentUser.displayName}`}
                   />
                 ) : (
                   <Avatar round size="25" src={account} />

@@ -34,12 +34,12 @@ const PostPopup = (props: postType) => {
       role="dialog"
       aria-modal="true"
     >
-      <div className="fixed inset-0 bg-zinc-950 bg-opacity-80 transition-opacity"></div>
+      <div className="fixed inset-0 bg-zinc-800 bg-opacity-80 transition-opacity"></div>
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-          <div className="relative transform rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
-            <div className="flex flex-col  ">
-              <div className="bg-white sm:w-full ">
+          <div className="relative h-[60%] transform rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
+            <div className="flex flex-col h-96  ">
+              <div className="bg-white sm:w-full p-1 rounded-sm">
                 <div
                   onClick={() => props?.setPost(false)}
                   className=" flex justify-center items-center rounded-full mx-1 mt-2 w-5 h-5 p-5 hover:bg-gray-100 cursor-pointer"
@@ -111,10 +111,10 @@ const PostPopup = (props: postType) => {
                     <div className="mt-3 flex flex-row gap-3 text-gray-500 items-center px-5">
                       {auth?.currentUser?.emailVerified ? (
                         <Avatar
+                          src={`${auth?.currentUser?.photoURL ?? account}`}
                           round
                           size="25"
-                          title={`Login as: ${auth.currentUser.displayName}`}
-                          name={auth?.currentUser?.email ?? account}
+                          title={`Login as ${auth.currentUser.displayName}`}
                         />
                       ) : (
                         <Avatar round size="25" src={account} />
@@ -168,16 +168,16 @@ const PostPopup = (props: postType) => {
                       <div className=" flex flex-row  sm:items-center sm:p-4">
                         {auth?.currentUser?.emailVerified ? (
                           <Avatar
+                            src={`${auth?.currentUser?.photoURL ?? account}`}
                             round
                             size="25"
                             title={`Login as ${auth.currentUser.displayName}`}
-                            name={auth?.currentUser?.email ?? account}
                           />
                         ) : (
                           <Avatar round size="25" src={account} />
                         )}
                         <h2 className="text-lg font-semibold p-4">
-                          {auth?.currentUser?.displayName}
+                          {auth?.currentUser?.displayName ?? "Not Loged In"}
                         </h2>
                       </div>
                       <div>
