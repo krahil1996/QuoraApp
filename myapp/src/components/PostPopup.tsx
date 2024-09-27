@@ -37,9 +37,9 @@ const PostPopup = (props: postType) => {
       <div className="fixed inset-0 bg-zinc-800 bg-opacity-80 transition-opacity"></div>
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-          <div className="relative h-[60%] transform rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
-            <div className="flex flex-col h-96  ">
-              <div className="bg-white sm:w-full p-1 rounded-sm">
+          <div className="relative transform  bg-white text-left shadow-xl transition-all sm:my-8 sm:w-[45%] h-[35rem]">
+            <div className="flex flex-col">
+              <div className="bg-white p-1 ">
                 <div
                   onClick={() => props?.setPost(false)}
                   className=" flex justify-center items-center rounded-full mx-1 mt-2 w-5 h-5 p-5 hover:bg-gray-100 cursor-pointer"
