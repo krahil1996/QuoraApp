@@ -64,7 +64,6 @@ const PostPopup = (props: postType) => {
                 </div>
                 <div className="flex flex-row justify-evenly">
                   <div
-                    onClick={() => setIsClicked(true)}
                     className={`text-center cursor-pointer font-semibold text-lg p-2 border-b-1 w-1/2 ${
                       isclicked
                         ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-t-2xl"
@@ -74,7 +73,6 @@ const PostPopup = (props: postType) => {
                     <h2>Add Question</h2>
                   </div>
                   <div
-                    onClick={() => setIsClicked(true)}
                     className={`text-center cursor-pointer font-semibold text-lg p-2 border-b-1 w-1/2 ${
                       isclicked
                         ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-t-2xl"
@@ -151,5 +149,3 @@ const PostPopup = (props: postType) => {
 };
 
 export default PostPopup;
-
-const createPost = () => {};
