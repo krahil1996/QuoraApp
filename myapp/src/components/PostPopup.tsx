@@ -1,14 +1,16 @@
 import { addDoc, collection } from "firebase/firestore";
 import { auth, storage } from "./firebase/Setup"; // Corrected to firestore
 import { useState } from "react";
-import Account from "../assets/Navicon/account.png";
+import account from "../assets/Navicon/account.png";
 import Right from "../assets/Navicon/right.png";
 import Group from "../assets/Navicon/group.png";
 import Down from "../assets/Navicon/downn.png";
+import Avatar from "react-avatar";
 import "../App.css";
 
 type postType = {
-  setPost: (state: boolean) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setPost: (state: any) => any;
 };
 
 const PostPopup = (props: postType) => {
@@ -36,14 +38,14 @@ const PostPopup = (props: postType) => {
 
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-          <div className="relative transform rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-            <div className="flex flex-row w-auto">
-              <div className="bg-white w-auto ">
-                <div className=" flex justify-center items-center rounded-full mx-1 mt-2 w-5 h-5 p-5 hover:bg-gray-100">
-                  <button
-                    className="focus:outline-transparent"
-                    onClick={() => props?.setPost(false)}
-                  >
+          <div className="relative transform rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
+            <div className="flex flex-col  ">
+              <div className="bg-white sm:w-full ">
+                <div
+                  onClick={() => props?.setPost(false)}
+                  className=" flex justify-center items-center rounded-full mx-1 mt-2 w-5 h-5 p-5 hover:bg-gray-100 cursor-pointer"
+                >
+                  <button className="focus:outline-transparent">
                     <svg
                       width="24"
                       height="24"
@@ -68,10 +70,10 @@ const PostPopup = (props: postType) => {
                   {/* Add Question Tab */}
                   <div
                     onClick={() => setActiveTab("addQuestion")}
-                    className={`text-center cursor-pointer font-semibold text-lg p-2 w-1/2 ${
+                    className={`text-center cursor-pointer font-semibold text-lg p-2 w-1/2  ${
                       activeTab === "addQuestion"
-                        ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-t-2xl"
-                        : "border-b border-gray-300"
+                        ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-b-full shadow-lg"
+                        : "border-b-1 border-gray-300 hover:bg-zinc-100"
                     }`}
                   >
                     <h2>Add Question</h2>
@@ -82,8 +84,8 @@ const PostPopup = (props: postType) => {
                     onClick={() => setActiveTab("createPost")}
                     className={`text-center cursor-pointer font-semibold text-lg p-2 w-1/2 ${
                       activeTab === "createPost"
-                        ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-t-2xl"
-                        : "border-b border-gray-300"
+                        ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-b-full shadow-lg"
+                        : "border-b-1 border-gray-300 hover:bg-zinc-100"
                     }`}
                   >
                     <h2>Create Post</h2>
@@ -107,12 +109,17 @@ const PostPopup = (props: postType) => {
                       </ul>
                     </div>
 
-                    <div className="mt-3 flex flex-row gap-3 text-gray-500 items-center px-2">
-                      <img
-                        style={{ height: "20px", width: "20px" }}
-                        src={Account}
-                        alt="Account"
-                      />
+                    <div className="mt-3 flex flex-row gap-3 text-gray-500 items-center px-5">
+                      {auth?.currentUser?.emailVerified ? (
+                        <Avatar
+                          round
+                          size="25"
+                          title={`Login as: ${auth.currentUser.displayName}`}
+                          name={auth?.currentUser?.email ?? account}
+                        />
+                      ) : (
+                        <Avatar round size="25" src={account} />
+                      )}
                       <img
                         style={{ height: "10px", width: "10px" }}
                         src={Right}
@@ -145,7 +152,7 @@ const PostPopup = (props: postType) => {
                           }`}
                         />
                       </div>
-                      <div className="mt-56">
+                      <div className="">
                         <button
                           onClick={addQuestion}
                           className="bg-blue-500 text-white rounded-full p-2 w-40 ml-80 mt-3 cursor-pointer"
@@ -158,19 +165,30 @@ const PostPopup = (props: postType) => {
                 ) : (
                   <>
                     {/* Create Post Content */}
-                    <div className="sm:items-start sm:p-4">
-                      <h2 className="text-lg font-semibold p-4">
-                        Create a New Post
-                      </h2>
+                    <div className="flex flex-col ">
+                      <div className=" flex flex-row  sm:items-center sm:p-4">
+                        {auth?.currentUser?.emailVerified ? (
+                          <Avatar
+                            round
+                            size="25"
+                            title={`Login as ${auth.currentUser.displayName}`}
+                            name={auth?.currentUser?.email ?? account}
+                          />
+                        ) : (
+                          <Avatar round size="25" src={account} />
+                        )}
+                        <h2 className="text-lg font-semibold p-4">
+                          {auth?.currentUser?.displayName}
+                        </h2>
+                      </div>
                       <div>
-                        <textarea
+                        <div
                           onMouseEnter={() => setIsHovered(true)} // Set hover to true on enter
                           onMouseLeave={() => setIsHovered(false)} // Set hover to false on leave
-                          placeholder="Start writing your post here..."
-                          className={`w-full outline-none h-40 p-2 border-b ${
+                          className={`${
                             isHovered ? "border-blue-500" : "border-gray-300"
                           }`}
-                        ></textarea>
+                        ></div>
                       </div>
                       <div className="mt-56">
                         <button className="bg-blue-500 text-white rounded-full p-2 w-40 ml-80 mt-3 cursor-pointer">

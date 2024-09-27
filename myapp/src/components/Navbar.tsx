@@ -90,6 +90,7 @@ const Navbar = (props: searchProp) => {
               <Avatar
                 round
                 size="25"
+                title={`Login as ${auth.currentUser.displayName}`}
                 name={auth?.currentUser?.email ?? account}
               />
             ) : (
