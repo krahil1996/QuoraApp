@@ -5,10 +5,6 @@ import Account from "../assets/Navicon/account.png";
 import Right from "../assets/Navicon/right.png";
 import Group from "../assets/Navicon/group.png";
 import Down from "../assets/Navicon/downn.png";
-import Account from "../assets/Navicon/account.png";
-import Right from "../assets/Navicon/right.png";
-import Group from "../assets/Navicon/group.png";
-import Down from "../assets/Navicon/downn.png";
 
 type postType = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
