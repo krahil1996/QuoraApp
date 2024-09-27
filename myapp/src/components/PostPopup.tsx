@@ -83,8 +83,6 @@ const PostPopup = (props: postType) => {
                     onClick={() => setActiveTab("createPost")}
                     className={`text-center cursor-pointer font-semibold text-lg p-2 w-1/2 ${
                       activeTab === "createPost"
-                        ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-t-2xl "
-                        : "border-b border-gray-300"
                         ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-b-full shadow-lg"
                         : "border-b-1 border-gray-300 hover:bg-zinc-100"
                     }`}
