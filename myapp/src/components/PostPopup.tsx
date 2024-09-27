@@ -5,6 +5,7 @@ import Account from "../assets/Navicon/account.png";
 import Right from "../assets/Navicon/right.png";
 import Group from "../assets/Navicon/group.png";
 import Down from "../assets/Navicon/downn.png";
+import "../App.css";
 
 type postType = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -15,7 +16,6 @@ const PostPopup = (props: postType) => {
   const questionRef = collection(storage, "questions"); // Changed to firestore
   const [quest, setQuest] = useState(""); // Captures input value
   const [isHovered, setIsHovered] = useState(false); // State for hover effect
-  const [isclicked, setIsClicked] = useState(false); // State for click effect
 
   // Function to add the question to storage
   const addQuestion = () => {
@@ -64,20 +64,12 @@ const PostPopup = (props: postType) => {
                 </div>
                 <div className="flex flex-row justify-evenly">
                   <div
-                    className={`text-center cursor-pointer font-semibold text-lg p-2 border-b-1 w-1/2 ${
-                      isclicked
-                        ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-t-2xl"
-                        : "border-b-1"
-                    }`}
+                    className={`text-center cursor-pointer font-semibold text-lg p-2 border-b-1 w-1/2 `}
                   >
                     <h2>Add Question</h2>
                   </div>
                   <div
-                    className={`text-center cursor-pointer font-semibold text-lg p-2 border-b-1 w-1/2 ${
-                      isclicked
-                        ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-t-2xl"
-                        : "border-b-1"
-                    }`}
+                    className={`text-center cursor-pointer font-semibold text-lg p-2 border-b-1 w-1/2 `}
                   >
                     <h2>Create Post</h2>
                   </div>
@@ -126,7 +118,9 @@ const PostPopup = (props: postType) => {
                       onChange={(e) => setQuest(e.target.value)} // Handle input change
                       placeholder="Start your question with Why, What, How, etc."
                       className={`w-full outline-none h-30 p-2 border-b-1 border-gray-300 ${
-                        isHovered ? "border-blue-500" : "border-gray-300"
+                        isHovered
+                          ? "border-blue-500 border-b-1"
+                          : "border-gray-300"
                       }`}
                     />
                   </div>
