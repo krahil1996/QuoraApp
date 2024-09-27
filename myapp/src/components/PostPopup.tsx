@@ -1,5 +1,5 @@
 import { addDoc, collection } from "firebase/firestore";
-import { auth, storage } from "./firebase/Setup"; // Fixed to firestore from storage
+import { auth, storage } from "./firebase/Setup"; // Corrected to firestore
 import { useState } from "react";
 import Account from "../assets/Navicon/account.png";
 import Right from "../assets/Navicon/right.png";
@@ -8,16 +8,16 @@ import Down from "../assets/Navicon/downn.png";
 import "../App.css";
 
 type postType = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setPost: any;
+  setPost: (state: boolean) => void;
 };
 
 const PostPopup = (props: postType) => {
-  const questionRef = collection(storage, "questions"); // Changed to firestore
+  const questionRef = collection(storage, "questions"); // Corrected to firestore
   const [quest, setQuest] = useState(""); // Captures input value
   const [isHovered, setIsHovered] = useState(false); // State for hover effect
+  const [activeTab, setActiveTab] = useState("addQuestion"); // State for active tab
 
-  // Function to add the question to storage
+  // Function to add the question to Firestore
   const addQuestion = () => {
     addDoc(questionRef, {
       question: quest,
@@ -39,7 +39,7 @@ const PostPopup = (props: postType) => {
           <div className="relative transform rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
             <div className="flex flex-row w-auto">
               <div className="bg-white w-auto ">
-                <div className=" flex justify-center items-center rounded-full mx-1 mt-2 w-5 h-5 p-5  hover:bg-gray-100">
+                <div className=" flex justify-center items-center rounded-full mx-1 mt-2 w-5 h-5 p-5 hover:bg-gray-100">
                   <button
                     className="focus:outline-transparent"
                     onClick={() => props?.setPost(false)}
@@ -62,77 +62,124 @@ const PostPopup = (props: postType) => {
                     </svg>
                   </button>
                 </div>
+
+                {/* Add Question and Create Post Tabs */}
                 <div className="flex flex-row justify-evenly">
+                  {/* Add Question Tab */}
                   <div
-                    className={`text-center cursor-pointer font-semibold text-lg p-2 border-b-1 w-1/2 `}
+                    onClick={() => setActiveTab("addQuestion")}
+                    className={`text-center cursor-pointer font-semibold text-lg p-2 w-1/2 ${
+                      activeTab === "addQuestion"
+                        ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-t-2xl"
+                        : "border-b border-gray-300"
+                    }`}
                   >
                     <h2>Add Question</h2>
                   </div>
+
+                  {/* Create Post Tab */}
                   <div
-                    className={`text-center cursor-pointer font-semibold text-lg p-2 border-b-1 w-1/2 `}
+                    onClick={() => setActiveTab("createPost")}
+                    className={`text-center cursor-pointer font-semibold text-lg p-2 w-1/2 ${
+                      activeTab === "createPost"
+                        ? "border-b-4 border-blue-600 transition-all ease-in-out rounded-t-2xl"
+                        : "border-b border-gray-300"
+                    }`}
                   >
                     <h2>Create Post</h2>
                   </div>
                 </div>
 
-                <div className="bg-blue-100 text-blue-600 p-3 m-4 rounded-md ">
-                  <p className="font-semibold text-lg">
-                    Tips on getting good answers quickly
-                  </p>
-                  <ul className="list-inside list-disc ">
-                    <li>Make sure your question has not been asked already</li>
-                    <li>Keep your question short and to the point</li>
-                    <li>Double-check grammar and spelling</li>
-                  </ul>
-                </div>
-                <div className="mt-3 flex flex-row gap-3 text-gray-500 items-center px-2">
-                  <img
-                    style={{ height: "20px", width: "20px" }}
-                    src={Account}
-                    alt="Account"
-                  />
-                  <img
-                    style={{ height: "10px", width: "10px" }}
-                    src={Right}
-                    alt="Arrow"
-                  />
-                  <div className="flex flex-row gap-2 items-center border rounded-full p-1 hover:bg-gray-200 cursor-pointer">
-                    <img
-                      style={{ height: "15px", width: "15px" }}
-                      src={Group}
-                      alt="Group"
-                    />
-                    <div>Public</div>
-                    <img
-                      style={{ height: "15px", width: "15px" }}
-                      src={Down}
-                      alt="Down Arrow"
-                    />
-                  </div>
-                </div>
-                <div className="sm:items-start sm:p-4">
-                  <div>
-                    <input
-                      onMouseEnter={() => setIsHovered(true)} // Set hover to true on enter
-                      onMouseLeave={() => setIsHovered(false)} // Set hover to false on leave
-                      onChange={(e) => setQuest(e.target.value)} // Handle input change
-                      placeholder="Start your question with Why, What, How, etc."
-                      className={`w-full outline-none h-30 p-2 border-b-1 border-gray-300 ${
-                        isHovered
-                          ? "border-blue-500 border-b-1"
-                          : "border-gray-300"
-                      }`}
-                    />
-                  </div>
-                  <div className="mt-56">
-                    <button
-                      onClick={addQuestion}
-                      className="bg-blue-500 text-white rounded-full p-2 w-40 ml-80 mt-3 cursor-pointer"
-                    >
-                      Add question
-                    </button>
-                  </div>
-                </div>
+                {/* Conditionally render content based on activeTab */}
+                {activeTab === "addQuestion" ? (
+                  <>
+                    {/* Add Question Content */}
+                    <div className="bg-blue-100 text-blue-600 p-3 m-4 rounded-md">
+                      <p className="font-semibold text-lg">
+                        Tips on getting good answers quickly
+                      </p>
+                      <ul className="list-inside list-disc">
+                        <li>
+                          Make sure your question has not been asked already
+                        </li>
+                        <li>Keep your question short and to the point</li>
+                        <li>Double-check grammar and spelling</li>
+                      </ul>
+                    </div>
+
+                    <div className="mt-3 flex flex-row gap-3 text-gray-500 items-center px-2">
+                      <img
+                        style={{ height: "20px", width: "20px" }}
+                        src={Account}
+                        alt="Account"
+                      />
+                      <img
+                        style={{ height: "10px", width: "10px" }}
+                        src={Right}
+                        alt="Arrow"
+                      />
+                      <div className="flex flex-row gap-2 items-center border rounded-full p-1 hover:bg-gray-200 cursor-pointer">
+                        <img
+                          style={{ height: "15px", width: "15px" }}
+                          src={Group}
+                          alt="Group"
+                        />
+                        <div>Public</div>
+                        <img
+                          style={{ height: "15px", width: "15px" }}
+                          src={Down}
+                          alt="Down Arrow"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="sm:items-start sm:p-4">
+                      <div>
+                        <input
+                          onMouseEnter={() => setIsHovered(true)} // Set hover to true on enter
+                          onMouseLeave={() => setIsHovered(false)} // Set hover to false on leave
+                          onChange={(e) => setQuest(e.target.value)} // Handle input change
+                          placeholder="Start your question with Why, What, How, etc."
+                          className={`w-full outline-none h-30 p-2 border-b-1 ${
+                            isHovered ? "border-blue-500" : "border-gray-300"
+                          }`}
+                        />
+                      </div>
+                      <div className="mt-56">
+                        <button
+                          onClick={addQuestion}
+                          className="bg-blue-500 text-white rounded-full p-2 w-40 ml-80 mt-3 cursor-pointer"
+                        >
+                          Add question
+                        </button>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {/* Create Post Content */}
+                    <div className="sm:items-start sm:p-4">
+                      <h2 className="text-lg font-semibold p-4">
+                        Create a New Post
+                      </h2>
+                      <div>
+                        <textarea
+                          onMouseEnter={() => setIsHovered(true)} // Set hover to true on enter
+                          onMouseLeave={() => setIsHovered(false)} // Set hover to false on leave
+                          placeholder="Start writing your post here..."
+                          className={`w-full outline-none h-40 p-2 border-b ${
+                            isHovered ? "border-blue-500" : "border-gray-300"
+                          }`}
+                        ></textarea>
+                      </div>
+                      <div className="mt-56">
+                        <button className="bg-blue-500 text-white rounded-full p-2 w-40 ml-80 mt-3 cursor-pointer">
+                          Create Post
+                        </button>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
