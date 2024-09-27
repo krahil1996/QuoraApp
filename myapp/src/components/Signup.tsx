@@ -57,6 +57,7 @@ const Signup = () => {
   const login = async () => {
     try {
       const data = await signInWithEmailAndPassword(auth, email, password);
+      console.log(data);
       setTimeout(() => {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         data?.user?.emailVerified && navigate("/index");

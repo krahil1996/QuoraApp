@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.6.0",
-    "@heroicons/react": "^2.1.5",
-    "firebase": "^10.13.2",
-    "prop-types": "^15.8.1"
-  }
-}

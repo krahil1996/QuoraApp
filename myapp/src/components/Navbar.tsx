@@ -12,7 +12,7 @@ import account from "../assets/Navicon/account.png";
 import { useState } from "react";
 import Avatar from "react-avatar";
 import { auth } from "./firebase/Setup";
-import PostPopup from "./PostPopup"
+import PostPopup from "./PostPopup";
 
 type searchProp = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -70,8 +70,8 @@ const Navbar = (props: searchProp) => {
               src={search}
               alt=""
             />
-            <input 
-            onChange={(e)=> props?.setSearch(e.target.value)}
+            <input
+              onChange={(e) => props?.setSearch(e.target.value)}
               className="  w-72 p-1 outline-none "
               type="text"
               name="search"
@@ -104,9 +104,10 @@ const Navbar = (props: searchProp) => {
               alt="language"
             />
           </div>
-          <div 
-          onClick={()=>setPost (true) }
-           className="border border-r-2 rounded-full bg-red-700 hover:bg-red-800 text-white w-40 p-2 text-sm font-semibold ">
+          <div
+            onClick={() => setPost(true)}
+            className="border border-r-2 rounded-full bg-red-700 hover:bg-red-800 text-white w-40 p-2 text-sm font-semibold "
+          >
             <button className="pl-1">Add question</button>
           </div>
           <div
@@ -132,9 +133,8 @@ const Navbar = (props: searchProp) => {
             </span>
           </div>
         </div>
-        {/* {post && <PostPopup setPost={setPost}/>} */}
       </div>
-      {post ? <PostPopup setPost={setPost} /> : ""}
+      {post && <PostPopup setPost={setPost} />}
     </div>
   );
 };
