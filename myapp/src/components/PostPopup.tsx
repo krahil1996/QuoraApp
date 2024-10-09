@@ -37,12 +37,12 @@ const PostPopup = (props: postType) => {
       <div className="fixed inset-0 bg-zinc-800 bg-opacity-80 transition-opacity"></div>
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-          <div className="relative transform  bg-white text-left shadow-xl transition-all sm:my-8 sm:w-[45%] h-[35rem]">
+          <div className="relative transform rounded-md bg-white text-left shadow-xl transition-all sm:my-8 sm:w-[45%] h-auto py-2">
             <div className="flex flex-col">
               <div className="bg-white p-1 ">
                 <div
                   onClick={() => props?.setPost(false)}
-                  className=" flex justify-center items-center rounded-full mx-1 mt-2 w-5 h-5 p-5 hover:bg-gray-100 cursor-pointer"
+                  className=" flex justify-center items-center rounded-full mx-1 mt-1 w-5 h-5 p-5 hover:bg-gray-100 cursor-pointer"
                 >
                   <button className="focus:outline-transparent">
                     <svg
@@ -151,7 +151,7 @@ const PostPopup = (props: postType) => {
                           }`}
                         />
                       </div>
-                      <div className="">
+                      <div className="float-right">
                         <button
                           onClick={addQuestion}
                           className="bg-blue-500 text-white rounded-full p-2 w-40 ml-80 mt-3 cursor-pointer"
@@ -189,10 +189,19 @@ const PostPopup = (props: postType) => {
                           }`}
                         ></div>
                       </div>
-                      <div className="mt-56">
-                        <button className="bg-blue-500 text-white rounded-full p-2 w-40 ml-80 mt-3 cursor-pointer">
-                          Create Post
-                        </button>
+                      <div className="">
+                        <textarea
+                          className="mx-4 outline-none hover:outline-blue-500"
+                          name=""
+                          placeholder="Enter Your text"
+                          rows={8}
+                          cols={85}
+                        ></textarea>
+                        <div className="float-right">
+                          <button className="bg-blue-500 text-white rounded-full p-2 w-40 ml-80 mt-3 cursor-pointer">
+                            Create Post
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </>
