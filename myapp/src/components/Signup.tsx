@@ -9,7 +9,6 @@ import "../App.css";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { H2Icon } from "@heroicons/react/16/solid";
 
 // Signup page
 const Signup = () => {
@@ -66,9 +65,7 @@ const Signup = () => {
 
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       data?.user?.emailVerified && toast.success("LoggedIn succesfully");
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       console.error(err);
 
       toast.error(`Please enter Valid Email`);
