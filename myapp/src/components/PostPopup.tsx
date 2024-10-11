@@ -1,21 +1,22 @@
-import { addDoc, collection } from "firebase/firestore";
-import { auth, storage } from "./firebase/Setup"; // Corrected to firestore
-import { useState } from "react";
 import account from "../assets/Navicon/account.png";
 import Right from "../assets/Navicon/right.png";
 import Group from "../assets/Navicon/group.png";
 import Down from "../assets/Navicon/downn.png";
-import Avatar from "react-avatar";
 import "../App.css";
+import Avatar from "react-avatar";
+import { addDoc, collection } from "firebase/firestore";
+import { auth, storage } from "./firebase/Setup"; // Corrected to firestore
+import { useState } from "react";
 
 type postType = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setPost: (state: any) => any;
+  setPost: any;
 };
 
 const PostPopup = (props: postType) => {
   const questionRef = collection(storage, "questions"); // Corrected to firestore
   const [quest, setQuest] = useState(""); // Captures input value
+
   const [isHovered, setIsHovered] = useState(false); // State for hover effect
   const [activeTab, setActiveTab] = useState("addQuestion"); // State for active tab
 
@@ -23,8 +24,9 @@ const PostPopup = (props: postType) => {
   const addQuestion = () => {
     addDoc(questionRef, {
       question: quest,
-      email: auth?.currentUser?.email,
+      email: auth.currentUser?.email,
     });
+    console.log(questionRef);
   };
 
   return (
@@ -146,7 +148,7 @@ const PostPopup = (props: postType) => {
                           onMouseLeave={() => setIsHovered(false)} // Set hover to false on leave
                           onChange={(e) => setQuest(e.target.value)} // Handle input change
                           placeholder="Start your question with Why, What, How, etc."
-                          className={`w-full outline-none h-30 p-2 border-b-1 ${
+                          className={`w-full outline-none h-30 p-2 border-b-1 mb-16 ${
                             isHovered ? "border-blue-500" : "border-gray-300"
                           }`}
                         />
@@ -189,19 +191,17 @@ const PostPopup = (props: postType) => {
                           }`}
                         ></div>
                       </div>
-                      <div className="">
-                        <textarea
-                          className="mx-4 outline-none hover:outline-blue-500"
-                          name=""
-                          placeholder="Enter Your text"
-                          rows={8}
-                          cols={85}
-                        ></textarea>
-                        <div className="float-right">
-                          <button className="bg-blue-500 text-white rounded-full p-2 w-40 ml-80 mt-3 cursor-pointer">
-                            Create Post
-                          </button>
-                        </div>
+                      <textarea
+                        className="m-4 p-1 outline-none hover:outline-blue-500 w-11/12 self-center resize-none border-b-1"
+                        name=""
+                        placeholder="Enter Your text"
+                        rows={8}
+                        cols={80}
+                      ></textarea>
+                      <div className="float-right mr-4">
+                        <button className="bg-blue-500 text-white rounded-full p-2 w-40  cursor-pointer float-right">
+                          Create Post
+                        </button>
                       </div>
                     </div>
                   </>

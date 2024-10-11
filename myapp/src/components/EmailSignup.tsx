@@ -5,6 +5,7 @@ import {
 } from "firebase/auth";
 import { auth } from "./firebase/Setup";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 type emailType = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -33,13 +34,22 @@ const EmailSignup = (props: emailType) => {
       onAuthStateChanged(auth, (user: any) => {
         sendEmailVerification(user);
       });
+      toast.success("you have succesfully Registred");
     } catch (err) {
       console.log(err);
+      toast.error(
+        <h2>
+          <b>Error:</b>
+          <br />
+          Invalid Email enter by User
+        </h2>
+      );
     }
 
-    alert("you have succesfully Registred");
+    SetName("");
+    setEmail("");
+    setPassword("");
   };
-  console.log(auth);
 
   return (
     <div>
@@ -89,6 +99,7 @@ const EmailSignup = (props: emailType) => {
                   onChange={(e) => SetName(e.target.value)}
                   className="p-2 w-full border outline-none rounded-ssm hover:border-blue-600 transition-all ease-in-out focus:border-blue-600 "
                   type="text"
+                  value={name}
                   placeholder="What would you like to be called?"
                 />
                 <h1 className="text-base font-semibold my-1">Email</h1>
@@ -96,6 +107,7 @@ const EmailSignup = (props: emailType) => {
                   onChange={(e) => setEmail(e.target.value)}
                   className="p-2 w-full border outline-none rounded-ssm hover:border-blue-600 transition-all ease-in-out focus:border-blue-600 "
                   type="email"
+                  value={email}
                   placeholder="Your Email"
                 />
                 <h1 className="text-base font-semibold my-1">Password</h1>
@@ -103,6 +115,7 @@ const EmailSignup = (props: emailType) => {
                   onChange={(e) => setPassword(e.target.value)}
                   className="p-2 w-full border outline-none rounded-ssm hover:border-blue-600 transition-all ease-in-out focus:border-blue-600 "
                   type="text"
+                  value={password}
                   placeholder="Your Password"
                 />
               </div>
@@ -122,4 +135,5 @@ const EmailSignup = (props: emailType) => {
     </div>
   );
 };
+
 export default EmailSignup;

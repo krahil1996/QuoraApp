@@ -92,7 +92,6 @@ const Navbar = (props: searchProp) => {
                 round
                 size="25"
                 title={`Login as ${auth.currentUser.displayName}`}
-                
               />
             ) : (
               <Avatar round size="25" src={account} />

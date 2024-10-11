@@ -9,6 +9,7 @@ import "../App.css";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { H2Icon } from "@heroicons/react/16/solid";
 
 // Signup page
 const Signup = () => {
@@ -28,7 +29,6 @@ const Signup = () => {
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       auth?.currentUser !== null && toast.success("LoggedIn succesfully");
     } catch (err) {
-      console.error(err);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const error: any = err;
       toast.error(error);
@@ -60,12 +60,18 @@ const Signup = () => {
       console.log(data);
       setTimeout(() => {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        data?.user?.emailVerified && navigate("/index");
+        data?.user?.emailVerified !== null && navigate("/index");
       }, 2000);
+      console.log(data);
+
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       data?.user?.emailVerified && toast.success("LoggedIn succesfully");
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       console.error(err);
+
+      toast.error(`Please enter Valid Email`);
     }
   };
 
@@ -127,34 +133,37 @@ const Signup = () => {
             </div>
 
             <div className="pl-6 w-2/4">
-              <div className="border-b-1 pb-1 font-semibold text-gray-800">
-                Login
-              </div>
-              <div className=" font-bold py-4 w-2/4 text-sm ">Email</div>
-              <input
-                onChange={(e) => setEmail(e.target.value)}
-                className="p-2 w-full border outline-none rounded-ssm hover:border-blue-600 transition-all ease-in-out focus:border-blue-600 "
-                placeholder="Your email"
-                type="email"
-              />
-              <div className=" font-bold py-4 w-2/4 text-sm ">Password</div>
-              <input
-                onChange={(e) => setPassword(e.target.value)}
-                className="p-2 mb-3 w-full border outline-none rounded-ssm hover:border-blue-600 transition-all ease-in-out focus:border-blue-600 "
-                placeholder="Your password"
-                type="password"
-              />
-              <div className="flex flex-row justify-between items-center ">
-                <div className="py-4 w-2/4 text-zinc-400 text-sm hover:underline cursor-pointer  ">
-                  Forgot password?
-                </div>
-                <button
-                  onClick={login}
-                  className=" w-20 h-10 bg-blue-600 text-white font-semibold items-center rounded-full "
-                >
+              <form action="">
+                <div className="border-b-1 pb-1 font-semibold text-gray-800">
                   Login
-                </button>
-              </div>
+                </div>
+                <div className=" font-bold py-4 w-2/4 text-sm ">Email</div>
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="p-2 w-full border outline-none rounded-ssm hover:border-blue-600 transition-all ease-in-out focus:border-blue-600 "
+                  placeholder="Your email"
+                  type="email"
+                />
+                <div className=" font-bold py-4 w-2/4 text-sm ">Password</div>
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="p-2 mb-3 w-full border outline-none rounded-ssm hover:border-blue-600 transition-all ease-in-out focus:border-blue-600 "
+                  placeholder="Your password"
+                  autoComplete="true"
+                  type="password"
+                />
+                <div className="flex flex-row justify-between items-center ">
+                  <div className="py-4 w-2/4 text-zinc-400 text-sm hover:underline cursor-pointer  ">
+                    Forgot password?
+                  </div>
+                  <button
+                    onClick={login}
+                    className=" w-20 h-10 bg-blue-600 text-white font-semibold items-center rounded-full "
+                  >
+                    Login
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
 
